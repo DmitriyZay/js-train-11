@@ -149,14 +149,10 @@ function setToArray(mySet) {
   // Використовуємо метод sort для сортування рядкових елементів в алфавітному порядку.
   // Повертаємо оброблений масив.
   //=========
-  let arr = [];
-  let i = 0;
-  for (const value of mySet) {
-    arr[i] = value;
-    i++;
-  }
-  arr = arr.filter((element) => typeof element === "string");
-  arr=arr.sort();
+  let arr = [...mySet]; // ДЕСТРУКТУРИЗАЦІЯ!!!!
+  
+ arr= arr.filter((element) => typeof element === "string");
+  arr.sort();
   return arr;
 }
 
